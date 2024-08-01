@@ -32,7 +32,7 @@ message_buffer = []
 
 async def send_telegram_messages():
     while True:
-        await asyncio.sleep(1)  # Chờ 1 giây
+        await asyncio.sleep(1)  # Wait for 1 second
         if not message_queue.empty():
             combined_message = []
             while not message_queue.empty():
@@ -43,7 +43,6 @@ async def send_telegram_messages():
             except Exception as e:
                 print(f"Error sending message: {e}")
 
-
 @client.event
 async def on_ready():
     print(f'We have logged in as {client.user}')
@@ -51,15 +50,15 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    # Kiểm tra nếu tin nhắn đến từ bot để tránh vòng lặp vô hạn
+    # Check if the message is from the bot to avoid infinite loop
     if message.author == client.user:
         return
 
-    # Kiểm tra nếu tin nhắn đến từ các kênh đã đăng ký
+    # Check if the message is from the registered channels
     if str(message.channel.id) in DISCORD_CHANNEL_IDS:
         print(f'Message from {message.guild.name} in {message.channel.name}: {message.content}')
         
-        # Thêm tin nhắn vào hàng đợi và bộ đệm
+        # Add the message to the queue and buffer
         telegram_message = f'Message from {message.guild.name} in {message.channel.name}: {message.content}'
         await message_queue.put(telegram_message)
         message_buffer.append(telegram_message)

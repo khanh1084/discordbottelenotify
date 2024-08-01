@@ -15,7 +15,7 @@ Make sure you have the following installed:
 
     ```sh
     git clone https://github.com/khanh1084/discordbottelenotify
-    cd discord-to-telegram-bot
+    cd discordbottelenotify
     ```
 
 2. Create a virtual environment and activate it:
@@ -48,11 +48,11 @@ Make sure you have the following installed:
 
 ## Usage
 
-Run the bot with the following command:
+    Run the bot with the following command:
 
-```sh
-python run.py
-```
+    ```sh
+    python run.py
+    ```
 
 ## Dependencies
 

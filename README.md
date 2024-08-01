@@ -48,16 +48,16 @@ Make sure you have the following installed:
 
 ## Usage
 
-    Run the bot with the following command:
+Run the bot with the following command:
 
-    ```sh
-    python run.py
-    ```
+```sh
+python run.py
+```
 
 ## Dependencies
 
 The project uses the following libraries:
 
-discord.py: Python wrapper for the Discord API.
-python-telegram-bot: Python wrapper for the Telegram Bot API.
-python-dotenv: Reads key-value pairs from a .env file and can set them as environment variables.
+    discord.py: Python wrapper for the Discord API.
+    python-telegram-bot: Python wrapper for the Telegram Bot API.
+    python-dotenv: Reads key-value pairs from a .env file and can set them as environment variables.
